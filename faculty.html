@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Faculty Directory</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      flex: 1;
+      padding: 2rem;
+    }
+
+    .faculty-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .faculty-card {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      padding: 1.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .faculty-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .faculty-card h5 {
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .faculty-card .text-muted {
+      color: #ccc !important;
+    }
+
+    .faculty-info {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      .faculty-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 16px 20px;
+      font-size: 14px;
+    color: #fff;
+    }
+
+      
+  .navbar  {
+    font-size: 1.1rem;
+    padding: 1rem 1.5rem;
+    background-color: rgba(255, 255, 255, 0) !important; /* translucent blue */
+    
+  }
+  
+  .navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 15s ease infinite;
+  }
+  
+  @keyframes gradientMove {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  
+  .nav-link {
+    margin: 0 10px;
+    font-weight: 500;
+    color: white !important;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: lightblue !important;
+  }
+    
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Study Verse</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="attendance.html">Attendance</a></li>
+          <li class="nav-item"><a class="nav-link" href="student.html">My Class</a></li>
+          <li class="nav-item"><a class="nav-link" href="tt.html">Time Table</a></li>
+          <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+          <li class="nav-item"><a class="nav-link" href="faculty.html">Faculty</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2 class="mb-4">Faculty Directory</h2>
+    <div class="faculty-grid">
+
+      <div class="faculty-card">
+        <h5>Nihar Ranjan Nayak</h5>
+        <div class="text-muted">JAVA FULL STACK DEVELOPMENT </div>
+        <div class="faculty-info">
+          <div><strong>Cabin: QF Faculty Cabin </strong> </div>
+          <div><strong>E-mail: niharranjan.nayak@presidencyuniversity.in</strong> </div>
+          <div><strong>Phone: +91 8637265280</strong> </div>
+        </div>
+      </div>
+
+      <div class="faculty-card">
+        <h5>Sridevi S</h5>
+        <div class="text-muted">FRONT-END FULL STACK DEVELOPMENT </div>
+        <div class="faculty-info">
+          <div><strong>Cabin: LF Faculty Cabin</strong> </div>
+          <div><strong>Email: sridevi.s@presidencyuniversity.in</strong> </div>
+          <div><strong>Phone: +91 9743065355</strong> </div>
+        </div>
+      </div>
+
+      <div class="faculty-card">
+        <h5>Jinesh V N</h5>
+        <div class="text-muted">THEORY OF COMPUTATIONS</div>
+        <div class="faculty-info">
+          <div><strong>Cabin: QF Faculty Cabin</strong> </div>
+          <div><strong>Email: jinesh.vn@presidencyuniversity.in</strong> </div>
+          <div><strong>Phone: +91 9739072949</strong> </div>
+        </div>
+      </div>
+
+      <div class="faculty-card">
+        <h5>Sreelatha P K</h5>
+        <div class="text-muted">WEB SECURITY</div>
+        <div class="faculty-info">
+          <div><strong>Cabin:</strong> </div>
+          <div><strong>Email: sreelatha.pk@presidencyuniversity.in</strong> </div>
+          <div><strong>Phone: +91 8722418272</strong> </div>
+        </div>
+      </div>
+
+      <div class="faculty-card">
+        <h5> Venna Pusa Ramalatha</h5>
+        <div class="text-muted">OPTIMIZATION TECHNIQUES</div>
+        <div class="faculty-info">
+          <div><strong>Cabin:</strong> </div>
+          <div><strong>Email: vennapusaramalatha@presidencyuniversity.in </strong> </div>
+          <div><strong>Phone: +91 9538348268</strong> </div>
+        </div>
+      </div>
+
+      <div class="faculty-card">
+        <h5>Ashishika Singh</h5>
+        <div class="text-muted">CYBER THREATS FOR IOT AND CLOUD</div>
+        <div class="faculty-info">
+          <div><strong>Cabin:</strong> </div>
+          <div><strong>Email: ashishika@presidencyuniversity.in </strong> </div>
+          <div><strong>Phone: +91 8962829066</strong> </div>
+        </div>
+      </div>
+
+      
+      <div class="faculty-card">
+        <h5>N Thrimoorthy</h5>
+        <div class="text-muted">DATA STRUCTURE AND WEB DEVELOPMENT USING PYTHON</div>
+        <div class="faculty-info">
+          <div><strong>Cabin: ST Faculty Cabin</strong></div>
+          <div><strong>Email: thrimoorthy.n@presidencyuniversity.in </strong> </div>
+          <div><strong>Phone: +91 9060967911</strong> </div>
+        </div>
+      </div>
+
+      <div class="faculty-card">
+        <h5> Shanmugarathinam Ganesharathinam</h5>
+        <div class="text-muted">INTRUSION DETECTION AND PREVENTION SYSTEMS</div>
+        <div class="faculty-info">
+          <div><strong>Cabin: LS Faculty Cabin</strong>  </div>
+          <div><strong>Email: shanmugarathinam@presidencyuniversity.in</strong> </div>
+          <div><strong>Phone: +91 9003922707</strong> </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Study Verse. All rights reserved.
+  </footer>
+</body>
+</html>

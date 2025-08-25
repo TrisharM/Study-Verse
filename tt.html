@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Time Table | Study Verse</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #00416a, #e4e5e6);
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content {
+      flex: 1;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    .day-buttons {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .day-buttons button {
+      margin: 5px;
+      padding: 10px 15px;
+      font-weight: bold;
+      background-color: #3e8e41;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .day-buttons button:hover {
+      background-color: #2e7031;
+    }
+    .card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 3 cards max */
+  gap: 30px; /* Adds space between cards */
+  padding: 0 100px; /* Left and right padding of the browser */
+}
+
+.card {
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255,255,255,0.35);
+  transition: transform 0.3s ease-in-out;
+  height: 100%;
+  width: 100%
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+    .card-body {
+      padding: 10px;;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .card-text {
+      font-size: 1rem;
+    }
+
+
+    /* Media query to adjust the cards in smaller screen sizes */
+    @media (max-width: 768px) {
+      .card {
+        width: 45%;  /* Adjust the width to fit two cards in smaller screen */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        width: 100%;  /* For mobile, display one card per row */
+      }
+    }
+
+
+    footer {
+      text-align: center;
+      padding: 16px 20px;
+      font-size: 14px;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0);
+    }
+
+    .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2.5rem; /* Increased padding */
+  background-color: transparent;
+}
+
+.navbar-brand {
+  font-size: 2rem; /* Bigger font */
+  font-weight: bold;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 15s ease infinite;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px; /* more space between links */
+}
+
+.nav-link {
+  font-size: 1.1rem; /* slightly larger */
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: lightblue;
+}
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+   
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand">Study Verse</div>
+    <div class="nav-links">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="attendance.html">Attendance</a>
+      <a class="nav-link" href="student.html">My Class</a>
+      <a class="nav-link" href="tt.html">Time Table</a>
+      <a class="nav-link" href="resources.html">Resources</a>
+      <a class="nav-link" href="faculty.html">Faculty</a>
+    </div>
+  </nav>
+
+  <div class="content">
+    <h2>5CCS-02 Time Table</h2>
+
+    <div class="day-buttons">
+      <button onclick="showDay('Monday')">Monday</button>
+      <button onclick="showDay('Tuesday')">Tuesday</button>
+      <button onclick="showDay('Wednesday')">Wednesday</button>
+      <button onclick="showDay('Thursday')">Thursday</button>
+      <button onclick="showDay('Friday')">Friday</button>
+    </div>
+
+    <div id="timetable-container" class="card-container row"></div>
+  </div>
+
+  <footer>
+    &copy; 2025 Study Verse. All rights reserved.
+  </footer>
+
+  <script>
+    const timeTableData = {
+      Monday: [
+        ["8:50 - 9:45", "Free Hour ",""],
+        ["9:45 - 10:40", "CSE 2040","Ashishika Singh"],
+        ["10:40 - 10:50", "Break",""],
+        ["10:50 - 12:35", "CSE 3151_P", "Nihar Ranjan Nayak"],
+      
+        ["12:35 - 1:25", "Lunch",""],
+        ["1:25 - 2:20", "CSE 3145"," Shanmugarathinam Ganesharathinam"],
+        ["2:20 - 2:30", "Break",""],
+        ["2:30 - 4:15", "CSE 3217","N Thrimoorthy "],
+       
+      ],
+      Tuesday: [
+        ["8:50 - 10:40", "Free Hour",""],
+        ["10:40 - 10:50", "Break", ""],
+        ["10:50 - 11:45", "CSE 2018", "Jinesh VN"],
+        ["11:45 - 12:35", "CSE 3150"," Sridevi S"],
+        ["12:35 - 1:25", "Lunch",""],
+        ["1:25 - 2:20", "CSE 3097","Sreelatha PK"],
+        ["2:20 - 2:30", "Break",""],
+        ["2:30 - 3:25", "CSE 3145", "Shanmugarathinam Ganesharathinam"],
+        ["3:25 - 4:15", "CSE 2040","Ashishika Singh"]
+      ],
+      Wednesday: [
+        ["8:50 - 9:45", "CSE 3097", "Sreelatha PK"],
+        ["9:45 - 10:40", "CSE 2040", "Ashishika Singh"],
+        ["10:40 - 10:50", "Break", ""],
+        ["10:50 - 11:45", "CSE 2018", "Jinesh VN"],
+        ["11:45 - 12:35", "CSE 3145","Shanmugarathinam Ganesharathinam"],
+        ["12:35 - 1:25", "Lunch",""],
+        ["1:25 - 2:20", "CSE 3151", "Nihar Ranjan Nayak"],
+        ["2:20 - 2:30", "Break",""],
+        ["2:30 - 3:25", "MAT 2031","Venna Pusa Ramalatha" ],
+        ["3:25 - 4:15", "Free Hour", ""]
+
+      ],
+      Thursday: [
+        ["8:50 - 10:40", "PPS 4005", "Sathish K"],
+        ["10:40 - 10:50", "Break",""],
+        ["10:50 - 12:30", "CSE 3150_P","Sridevi S"],
+        
+        ["12:35 - 1:25", "Lunch",""],
+        ["1:25 - 2:20", "Free Hour", ""],
+        ["2:20 - 2:30", "Break",""],
+        ["1:25 - 2:20", "CSE 2018","Jinesh VN"],
+        ["2:30 - 3:25", "MAT 2031", "Venna Pusa Ramalatha"]
+      ],
+      Friday: [
+        ["8:50 - 10:40", "CSE 3097_P","Sreelatha PK"],
+        ["10:40 - 10:50", "Break",""],
+        ["10:50 - 11:45", "CSE 3150","Sridevi S"],
+        ["11:45 - 12:35", "MAT 2031","Venna Pusa Ramalatha"],
+        ["12:35 - 1:25", "Lunch",""],
+        ["1:25 - 2:20", "CSE 3151","Nihar Ranjan Nayak"],
+        ["2:20 - 2:30", "Break",""],
+
+        ["2:30 - 4:15", "Free Hour",""]
+      ]
+    };
+
+    function showDay(day) {
+      const schedule = timeTableData[day];
+      let html = '';
+      for (let row of schedule) {
+        const [time, subject, faculty] = row;
+        const cardClass = subject === "Break" ? "break" : subject === "Lunch" ? "lunch" : "";
+        html += `
+          <div class="card ">
+            <div class="card-body">
+              <h5 class="card-title">${subject}</h5>
+              <p class="card-text">${time}</p>
+              <p class="card-text">${faculty}</p>
+            </div>
+          </div>
+        `;
+      }
+      document.getElementById("timetable-container").innerHTML = html;
+    }
+  </script>
+</body>
+</html>

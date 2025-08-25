@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Study Verse</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(270deg, #4c6ef5, #5f27cd, #00a8ff, #38ada9);
+      background-size: 800% 800%;
+      animation: gradientFlow 12s ease infinite;
+      color: white;
+      overflow: hidden;
+    }
+
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .logo-container {
+      position: absolute;
+      top: 30px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .logo {
+      width: 200px;
+      height: 200px;
+      animation: popIn 1s ease-in-out;
+    }
+
+    .app-name {
+      font-size: 1.8rem;
+      margin-top: 0px;
+      animation: slideIn 1.5s ease-in-out;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.4);
+    }
+
+    .main-content {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .welcome {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .details {
+      font-size: 1rem;
+      opacity: 0.9;
+      animation: fadeIn 2.5s ease-in-out;
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @keyframes popIn {
+      0%   { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      0%   { transform: translateY(-20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="logo-container">
+    <img src="logo2.png" alt="App Logo" class="logo" />
+    <div class="app-name">Study Verse</div>
+  </div>
+
+  <div class="main-content">
+    <div class="welcome">Welcome to Study Verse, <span id="username">Student</span>!</div>
+    <div class="details">
+      Your personal learning companion. Track attendance, manage subjects, and stay on top of your academic journey – all in one place. Let’s make studying smarter, together.
+    </div>
+  </div>
+
+  <script>
+    const storedUsername = sessionStorage.getItem("loggedInUser");
+    const usernameDisplay = document.getElementById("username");
+
+    if (storedUsername) {
+      usernameDisplay.textContent = storedUsername;
+    }
+
+    // Optional: Redirect after delay
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 4000);
+  </script>
+</body>
+</html>

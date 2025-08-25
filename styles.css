@@ -1,0 +1,234 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(-45deg, #6a11cb, #2575fc, #ff4e50, #f9d423);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+    color: white;
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  @keyframes gradientMove {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
+  
+  /* Use a flexbox for the main container */
+  .container {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between the widgets */
+  }
+  
+  .card {
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background-color: rgba(255, 255, 255, 0.6);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%; /* Allow cards to take up full height */
+    flex: 1 1 calc(50% - 20px); /* Two items per row, allowing space for gaps */
+  }
+  
+  .widget-header {
+    flex-shrink: 0;
+    padding: 15px;
+  }
+  
+  .widget-body {
+    flex: 1;
+    overflow-y: auto;
+  }
+  
+ 
+  
+  #todo-list .list-group-item {
+    border: none;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    background: rgba(0,0,0,0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+  }
+ 
+ 
+  .widget-footer {
+    display: flex;
+    justify-content: center; /* centers the button horizontally */
+    align-items: center;
+  }
+  
+  .todo-btn {
+    margin-top: 10px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .no-task-msg {
+    font-style: italic;
+    color: gray;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.95rem;
+  }
+  
+ /* Modal Header Styling */
+.modal-header h5 {
+    color: black !important; /* Ensures the text color is black */
+  }
+  
+  /* Modal Close Button Color */
+  .modal-header .btn-close, .modal-body {
+    color: black; /* Sets the close button color to black */
+  }
+  
+  /* Additional styling to ensure visibility of text in modals */
+  .modal-content {
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .modal-body input {
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+  }
+  
+  .modal-footer {
+    border: none;
+  }
+  
+  .done {
+    text-decoration: line-through;
+    color: gray;
+  }
+  
+  .planner-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .goal-item {
+    background: rgba(240, 242, 245, 0.8);
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .countdown-display, .gpa-result {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 15px 0;
+    word-break: break-word;
+  }
+  
+  @media (max-width: 768px) {
+    /* Stack the widgets vertically on smaller screens */
+    .card {
+      flex: 1 1 100%; /* Allow cards to take full width on mobile */
+    }
+    
+    .todo-btn {
+      position: static;
+      margin-top: 20px;
+    }
+  }
+  
+  .day-link {
+    display: inline-block;
+    padding: 5px 10px;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+
+  .day-link.checked {
+    color: #28a745; /* green */
+    font-weight: bold;
+  }
+
+  .day-link:hover {
+    text-decoration: underline;
+    color: #ccc;
+  }
+  .task-done {
+    background-color: #d4edda !important;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  .task-done .task-text {
+    text-decoration: line-through;
+    color: #155724;
+  }
+  .countdown-display{
+    color: black;
+    text-decoration: none;
+  }
+  .navbar {
+    font-size: 1.1rem;
+    padding: 1rem 1.5rem;
+    background-color: rgba(255, 255, 255, 0.1) !important; /* translucent blue */
+    
+  }
+  
+  .navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    background: white;
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 15s ease infinite;
+  }
+  
+  @keyframes gradientMove {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  
+  .nav-link {
+    margin: 0 10px;
+    font-weight: 500;
+    color: white !important;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: lightblue !important;
+  }
+  footer {
+    text-align: center;
+    padding: 16px 20px;
+    font-size: 14px;
+    color: #fff;
+    
+  }
+  
+  
+  
